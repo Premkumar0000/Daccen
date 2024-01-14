@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        #loader {
+          border: 5px solid black;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+            display: none;
+        }
+
+        #main-image, #loading-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .rotate {
+            animation: rotate 3s infinite linear;
+        }
+
+        @keyframes rotate {
+            100%{
+              rotate: 360deg;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="loadNewImage()">Load New Image</button>
+
+    <div id="loader">
+        
+    </div>
+
+    <div id="main-image">
+        <img src="initial-image.jpg" alt="Initial Image">
+    </div>
+
+    <script>
+        function loadNewImage() {
+            // Hide the main image
+            document.getElementById("main-image").style.display = "none";
+
+            // Show the loader
+            document.getElementById("loader").style.display = "block";
+
+            // Simulate a delay (3 seconds in this case) before showing the new image
+            setTimeout(function() {
+                // Hide the loader
+                document.getElementById("loader").style.display = "none";
+
+                // Show the new image
+                document.getElementById("main-image").style.display = "block";
+
+                // You can set the source of the new image here
+                document.getElementById("main-image").innerHTML = '<img src="new-image.jpg" alt="New Image">';
+            }, 3000);
+        }
+    </script>
+
+</body>
+</html>
