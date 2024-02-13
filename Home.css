@@ -118,6 +118,7 @@ nav{
       left: -100%;
       text-align: center;
       transition: all .5s;
+      z-index: 1;
     }
     nav ul li{
       display: block;
@@ -429,7 +430,11 @@ nav{
   }
 }
 /*  */
-
+#new{
+  margin-left: 3%;
+  margin-right: 3%;
+  gap: 0.3%;
+}
 
 
 
